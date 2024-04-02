@@ -1,7 +1,7 @@
 const formular = document.querySelector("#registrace")
 
 formular.addEventListener("input", (event) => {
-    const oblast = document.querySelector(".container")
+    const oblast = document.querySelector(".ramecek")
     const email = document.querySelector("#email")
 
     if (event.target.value.length > 1 || email.value.includes("@")) {
@@ -17,12 +17,12 @@ formular.addEventListener("submit", (event) => {
     
     if (emailValue.indexOf("@") === -1) {
         event.preventDefault()
-        const oblast = document.querySelector(".container")
+        const oblast = document.querySelector(".ramecek")
         oblast.classList.add("red-border")
     } else {
-        const oblast = document.querySelector(".container")
-        oblast.innerHTML = `Jupí!! Těš se na novinky ze světa frontendu a UX na vaší adrese ${emailValue}.`
+        const oblast = document.querySelector(".ramecek")
+        document.body.innerHTML = `Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${emailValue}.`
     }
 })
 
-        oblast.classList.add("red-border")
+      
