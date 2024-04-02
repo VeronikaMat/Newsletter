@@ -21,8 +21,7 @@ formular.addEventListener("submit", (event) => {
         oblast.classList.add("red-border")
     } else {
         const oblast = document.querySelector(".ramecek")
-        document.body.innerHTML = `Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${emailValue}.`
+        document.body.innerHTML = `Jupí. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${emailValue}.`
     }
 })
 
-      
