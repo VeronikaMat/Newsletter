@@ -1,27 +1,25 @@
+
 const formular = document.querySelector("#registrace")
+const mail = document.querySelector("#email")
 
-formular.addEventListener("input", (event) => {
-    const oblast = document.querySelector(".ramecek")
-    const email = document.querySelector("#email")
 
-    if (event.target.value.length > 1 || email.value.includes("@")) {
-        oblast.classList.remove("red-border")
+const redBorder = (event) => {
+    if (event.target.value === "" || !event.target.value.includes('@')) {
+        mail.classList.add("ramecek")
     } else {
-        oblast.classList.add("red-border")
+        mail.classList.remove("ramecek")
     }
-})
+} 
 
+const message = (event) => {
+    event.preventDefault()
+    const oznameni = document.querySelector("#zprava")
+    const oznameni1 = document.querySelector("#zprava1")
+    oznameni.textContent = `Jupí! Těšte se na novinky ze světa frontendu a UX na vaší adrese ${mail.value}`
+    oznameni1.textContent = ``
+}
 
-formular.addEventListener("submit", (event) => {
-    const emailValue = document.querySelector("#email").value
-    
-    if (emailValue.indexOf("@") === -1) {
-        event.preventDefault()
-        const oblast = document.querySelector(".ramecek")
-        oblast.classList.add("red-border")
-    } else {
-        const oblast = document.querySelector(".ramecek")
-        document.body.innerHTML = `Jupí. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${emailValue}.`
-    }
-})
+mail.addEventListener("input", redBorder) 
+formular.addEventListener("submit", message) 
+
 
